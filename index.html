@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Simulator</title>
+    <style>
+      :root {
+        --content: "";
+      }
+
+      *,
+      *:before {
+        box-sizing: border-box;
+      }
+
+	  body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+	  
+      .device {
+        background-color: #ccc;
+        border-radius: 10px;
+        margin: 0px 10px 5px 0px;
+        border-top: 30px solid black;
+        border-bottom: 25px solid black;
+        border-left: 5px solid black;
+        border-right: 5px solid black;
+      }
+
+      iframe {
+        border: none;
+      }
+
+      .device-bar {
+        background-color: #616161;
+        padding: 20px;
+        position: relative;
+      }
+
+      .device-bar::before {
+        position: absolute;
+        content: var(--content);
+        background-color: white;
+        left: 5px;
+        top: 5px;
+        bottom: 5px;
+        right: 50px;
+        border-radius: 5px;
+        z-index: 5;
+        font-family: monospace;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 10px;
+        overflow: hidden;
+      }
+
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Open <a href="?url=https://www.example.com" target="_blank">https://www.example.com</a> in new tab </p>
+    <div class='device'>
+      <div class="device-bar hide"></div>
+      <iframe style="width: 2.89in; height: 5.55in"></iframe>
+    </div>
+    <div class='device'>
+      <div class="device-bar"></div>
+      <iframe style="width: 9.2in; height: 6.57in"></iframe>
+    </div>
+    <script>
+      var ifr = document.querySelectorAll('iframe')
+      if (location.search.length != 0) {
+        ifr.forEach((el) => {
+          _url = location.search.split('=')[1]
+          el.src = _url
+          el.parentElement.firstElementChild.style = '--content:"' + _url + '"'
+        })
+      }
+    </script>
+  </body>
+</html>
