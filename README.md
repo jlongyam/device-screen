@@ -13,5 +13,5 @@ device simulator using css, HTML iframe, and simple javascript.
 
 ## Demo
 
-- https://jlongyam.github.io/device-screen/
-- https://jlongyam.github.io/device-screen/?url=https://example.com
+- [basic](https://jlongyam.github.io/device-screen/)
+- [get](https://jlongyam.github.io/device-screen/?url=https://example.com)
