@@ -10,7 +10,4 @@ device simulator using css, HTML iframe, and simple javascript.
 - section `.wide` for wide screen TV 
 - included `.hide` class
 
-### Credit
-
-- [muti-screen-preview](https://github.com/demostheneslld/muti-screen-preview)
-- [html5-device-mockups](https://github.com/pixelsign/html5-device-mockups)
+[Demo](https://jlongyam.github.io/device-screen/)
